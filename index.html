@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <script src="./src/script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="card1" class="card">
+        <div class="outer_icon_circle">
+        <span class="circle"
+          ><img src="images/icon-star.svg" alt="orange star"
+        /></span>
+      </div>
+        <h2 class="title">How did we do?</h2>
+        <div class="description">
+          <p>Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!</p>
+        </div>
+        <div class="buttons">
+          <span id="btn1" class="circle_button">1</span>
+          <span id="btn2" class="circle_button">2</span>
+          <span id="btn3" class="circle_button">3</span>
+          <span id="btn4" class="circle_button">4</span>
+          <span id="btn5" class="circle_button">5</span>
+        </div>
+        <div class="outer_submit_button">
+        <div class="submit_button">submit</div>
+      </div>
+    </div>
+    </div>
+    <div class="container">
+    <div id="card2" class="card2 cardactive">
+      <img src="./images/illustration-thank-you.svg" alt="">
+      <div class="card2select"><p id="thankyouMessage" class="select_button">You selected out of 5</p></div>
+      <h1  class="card2thankyou">Thank you!</h1>
+      <p class="card2p">We appreciate you taking the time to give a rating. If you ever need more support, 
+        don’t hesitate to get in touch!</p>
+    </div>
+  </div>
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  </body>
+</html>
