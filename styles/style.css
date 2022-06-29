@@ -60,13 +60,14 @@ img {
     gap: 30px;
 }
 
-.circle_button_1 {
+.circle_button.different {
     vertical-align: middle;
     border-radius: 50%;
     background-color: hsl(216, 12%, 54%,0.1);
     padding: 0.75em 1.12em;
     color: hsl(0, 0%, 100%,0.5);
     cursor: pointer;
+
 }
 
 .circle_button_1:hover {
