@@ -1,35 +1,50 @@
-
+let onceClicked = false;
 /* .circle_button:active {
     background-color: hsl(25, 97%, 53%);
     color: white;
 } */
-const changeColorBtns = document.getElementsByClassName("circle_button");
-const btn1 = document.getElementById("btn1");
-const btn2 = document.getElementById("btn2");
-const btn3 = document.getElementById("btn3");
-const btn4 = document.getElementById("btn4");
-const btn5 = document.getElementById("btn5");
-const arrayofBtns = [btn1, btn2, btn3, btn4, btn5];
+const changeColorBtns = document.querySelectorAll(".circle_button");
+// for (let i = 0; i < changeColorBtns.length; i++) {
+//   for (let b = 0; b < changeColorBtns.length; b++) {
+//     changeColorBtns[i].addEventListener("click", () => {
+//       changeColorBtns[b].classList.remove("active");
+//       changeColorBtns[i].classList.add("active");
+//       onceClicked = true;
+//     });
+//   }
+// }
 
-for (let i = 0; i < changeColorBtns.length; i++) {
-  for (let b = 0; b < arrayofBtns.length; b++) {
-    changeColorBtns[i].addEventListener("click", () => {
-      arrayofBtns[b].classList.remove("active");
-      changeColorBtns[i].classList.add("active");
-    });
-  }
-}
+changeColorBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    if(document.querySelector('.active') !== null) document.querySelector('.active').classList.remove('active')
+    btn.classList.add('active')
+    onceClicked = true;
+  })
+});
+
 const submitButton = document.querySelector(".submit_button");
 const card1State = document.getElementById("card1");
 const card2State = document.getElementById("card2");
 const thankyouMessage = document.getElementById("thankyouMessage");
 
 submitButton.addEventListener("click", () => {
-  for(let i = 0; i < arrayofBtns.length; i++ ) {
-    if(arrayofBtns[i].classList.contains('active')) {
-      thankyouMessage.innerHTML = `You selected ${Number([i]) + 1} out of 5`
+  if (
+    onceClicked
+    // btn1.classList.contains("active")  ||
+    // btn2.classList.contains("active")  ||
+    // btn3.classList.contains("active")  ||
+    // btn4.classList.contains("active")  ||
+    // btn5.classList.contains("active") 
+  ) {
+    for (let i = 0; i < changeColorBtns.length; i++) {
+      if (changeColorBtns[i].classList.contains("active")) {
+        thankyouMessage.innerHTML = `You selected ${Number([i]) + 1} out of 5`;
+      }
+      card1State.classList.add("cardactive");
+      card2State.classList.remove("cardactive");
     }
+  } else {
+    alert("Please Select a button!")
   }
-  card1State.classList.add("cardactive");
-  card2State.classList.remove("cardactive");
+
 });

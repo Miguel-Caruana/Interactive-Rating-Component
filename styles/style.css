@@ -20,7 +20,7 @@ body {
     font-family: 'Overpass', sans-serif;
     width: 410px;
     border-radius: 20px;
-
+    /* border-radius;100vh */
 }
 
 .card {
